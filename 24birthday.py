@@ -7,7 +7,7 @@ people = int(sys.argv[3])
 
 success = 0
 
-for i in range(9,trials):
+for i in range(0,trials):
     calendar = [0] * days
     for j in range(0,people):
        birthday = random.randint(0,days-1)
@@ -20,3 +20,4 @@ for i in range(9,trials):
 prob = success / trials
 prob *= 100
 print(f"The probobility of {people} persons in a class room with same brithday is: {prob}%")
+
