@@ -8,7 +8,7 @@ def median(values):
     values = sorted(values)
     n = len(values)
     mediannumber = n // 2
-    if n % 2 == 0: return values[mediannumber]
+    if n % 2 != 0: return values[mediannumber]
     else: return (values[mediannumber-1] + values[mediannumber]) / 2
 
 def stddev(values):
@@ -32,4 +32,5 @@ print(f"Count:{len(input)}")
 print(f"Max value and Min Value:{maxmin(input)}")
 print(f"Mean: {mean(input)}")
 print(f"Standard Deviation: {stddev(input)}")
+
 print(f"Median: {median(input)}")
