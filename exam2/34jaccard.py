@@ -1,0 +1,33 @@
+import sys
+
+def get_names(filename):
+    names = []
+    with open(filename) as f:
+        name = f.read()
+    names = name.split('\n')
+    while(True):
+        try:
+            names.remove('')
+        except ValueError:
+            break
+    names = set(names)
+    print(names)
+    return names
+
+
+def jaccard(X,Y):
+    intersection = X & Y
+    union = X | Y
+    print(intersection,union)
+    if len(union) == 0.0:
+        return 0.0
+    return len(intersection)/len(union)
+
+files1, files2 = sys.argv[1], sys.argv[2]
+
+set1 = get_names(files1)
+set2 = get_names(files2)
+
+result = jaccard(set1,set2)
+
+print(f'Jaccard score of this two file is :{result}')

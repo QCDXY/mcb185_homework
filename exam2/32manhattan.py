@@ -8,4 +8,3 @@ def manhattan(X1,X2):
 	
 print(manhattan([1,2,3],[1,2,3]))
 print(manhattan([4,5,6],[1,2,3]))
-		
