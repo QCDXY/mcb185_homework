@@ -11,14 +11,12 @@ def get_names(filename):
         except ValueError:
             break
     names = set(names)
-    print(names)
     return names
 
 
 def jaccard(X,Y):
     intersection = X & Y
     union = X | Y
-    print(intersection,union)
     if len(union) == 0.0:
         return 0.0
     return len(intersection)/len(union)
