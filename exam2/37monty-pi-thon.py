@@ -3,7 +3,7 @@ import random
 trials = 0
 success = 0
 
-while(True):
+while True:
     x = random.random()
     y = random.random()
     trials += 1
