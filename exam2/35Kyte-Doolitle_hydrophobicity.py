@@ -12,4 +12,17 @@ def hydropathy(seq):
         return 'Input include invalid amino acid'
     return result
 
+def hydropathy1(seq):
+    result = 0
+    for ami in seq:
+        try:
+            index = aas.index(ami)
+            result += kdh[index]
+        except ValueError:
+            return 'Input include invalid amino acid'
+    return result
+
 print(hydropathy('MKTIIALSYWACD'))
+print(hydropathy('MKTIIALSYWACDX'))
+print(hydropathy1('MKTIIALSYWACD'))
+print(hydropathy1('MKTIIALSYWACDX'))

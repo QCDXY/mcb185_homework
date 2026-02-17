@@ -16,10 +16,32 @@ def translate(seq):
             result += 'X'
     return result
 
+def translate1(seq):
+    codon = ''
+    result = []
+
+    for i in range(0, len(seq), 3):
+        codon = seq[i:i+3]
+        if len(codon) != 3:
+            result.append('X')
+            continue
+        if any(nt not in 'ACGT' for nt in codon):
+            result.append('X')
+            continue
+        index = codons.index(codon)
+        result.append(trans[index])
+
+    return ''.join(result)
+
 print(translate('AAATTTCCCGGG'))
 print(translate('AAATTTCCCGGGG'))
 print(translate('AAANTTTCCCGGG'))
 print(translate('AAANNNTTTCCCGGG'))
+
+print(translate1('AAATTTCCCGGG'))
+print(translate1('AAATTTCCCGGGG'))
+print(translate1('AAANTTTCCCGGG'))
+print(translate1('AAANNNTTTCCCGGG'))
 
 
 
